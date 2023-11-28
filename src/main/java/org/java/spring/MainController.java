@@ -1,5 +1,4 @@
 package org.java.spring;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,7 +9,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 @Controller
 public class MainController {
-	
 	
 	@GetMapping("/")
 	public String index(Model model) {
@@ -23,9 +21,7 @@ public class MainController {
 	public String movies(Model model) {
 	 List<Movie> bestMovies = getBestMovies(); 
      List<String> titles = new ArrayList<>();
-     for (int x=0;x<bestMovies.size();x++) {
-        titles.add(bestMovies.get(x).getTitle());
-     }
+     for (int x=0;x<bestMovies.size();x++) titles.add(bestMovies.get(x).getTitle());
      String bestMoviesString = String.join(", ", titles);
      model.addAttribute("bestMovies", bestMoviesString);
 
@@ -35,12 +31,9 @@ public class MainController {
 	public String songs(Model model) {
 	    List<Song> bestSongs = getBestSongs(); 
 	    List<String> titles = new ArrayList<>();
-	    for (int x=0;x<bestSongs.size();x++) {
-	        titles.add(bestSongs.get(x).getTitle());
-	    }
+	    for (int x=0;x<bestSongs.size();x++) titles.add(bestSongs.get(x).getTitle());
 	    String bestSongsString = String.join(", ", titles);
 	    model.addAttribute("bestSongs", bestSongsString);
-
 	    return "songs";
 	}
 	
