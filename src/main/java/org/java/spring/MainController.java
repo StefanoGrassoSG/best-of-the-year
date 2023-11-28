@@ -19,13 +19,12 @@ public class MainController {
 
 	@GetMapping("/movies")
 	public String movies(Model model) {
-	 List<Movie> bestMovies = getBestMovies(); 
-     List<String> titles = new ArrayList<>();
-     for (int x=0;x<bestMovies.size();x++) titles.add(bestMovies.get(x).getTitle());
-     String bestMoviesString = String.join(", ", titles);
-     model.addAttribute("bestMovies", bestMoviesString);
-
-    return "movies";
+		List<Movie> bestMovies = getBestMovies(); 
+	    List<String> titles = new ArrayList<>();
+	    for (int x=0;x<bestMovies.size();x++) titles.add(bestMovies.get(x).getTitle());
+	    String bestMoviesString = String.join(", ", titles);
+	    model.addAttribute("bestMovies", bestMoviesString);
+	    return "movies";
 	}
 	@GetMapping("/songs")
 	public String songs(Model model) {
@@ -57,21 +56,21 @@ public class MainController {
 	}
 	
 	private List<Movie> getBestMovies() {
-		   List<Movie> movies = new ArrayList<>();
-		   movies.add(new Movie(1, "Titanic"));
-		   movies.add(new Movie(2, "Daredevil"));
-		   movies.add(new Movie(3, "Superman"));
-		   movies.add(new Movie(4, "Batman"));
-		   movies.add(new Movie(5, "Narnia"));
-		   return movies;
+	    List<Movie> movies = new ArrayList<>();
+	    movies.add(new Movie(1, "Titanic"));
+	    movies.add(new Movie(2, "Daredevil"));
+	    movies.add(new Movie(3, "Superman"));
+	    movies.add(new Movie(4, "Batman"));
+	    movies.add(new Movie(5, "Narnia"));
+	    return movies;
 	}
 	private List<Song> getBestSongs() {
-	       List<Song> songs = new ArrayList<>();
-	       songs.add(new Song(1, "Halo"));
-	       songs.add(new Song(2, "No Love"));
-	       songs.add(new Song(3, "Closer"));
-	       songs.add(new Song(4, "Faded"));
-	       songs.add(new Song(5, "Rockstar"));
-	       return songs;
+        List<Song> songs = new ArrayList<>();
+        songs.add(new Song(1, "Halo"));
+        songs.add(new Song(2, "No Love"));
+        songs.add(new Song(3, "Closer"));
+        songs.add(new Song(4, "Faded"));
+        songs.add(new Song(5, "Rockstar"));
+        return songs;
 	}
 }
