@@ -14,11 +14,8 @@ public class MainController {
 	
 	@GetMapping("/")
 	public String index(Model model) {
-		
 		final String myName = "stefano";
-		
 		model.addAttribute("myName", myName);
-		
 		return "index";
 	}
 
@@ -65,7 +62,6 @@ public class MainController {
 		model.addAttribute("title", song);
 		return "songs";
 	}
-	
 	
 	private List<Movie> getBestMovies() {
 		   List<Movie> movies = new ArrayList<>();
