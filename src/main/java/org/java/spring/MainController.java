@@ -50,15 +50,19 @@ public class MainController {
 	@GetMapping("movies/{id}") 
 	public String movie(Model model, @PathVariable int id) {
 		List<Movie> bestMovies = getBestMovies();
-		String title = bestMovies.get(id).getTitle();
-		model.addAttribute("title", title);
+		String movie = null;
+		for(int x=0;x<bestMovies.size();x++)
+			if(bestMovies.get(x).getId() == id) movie = bestMovies.get(x).getTitle();
+		model.addAttribute("title", movie);
 		return "movies";
 	}
 	@GetMapping("songs/{id}") 
 	public String song(Model model, @PathVariable int id) {
 		List<Song> bestSongs = getBestSongs();
-		String title = bestSongs.get(id).getTitle();
-		model.addAttribute("title", title);
+		String song = null;
+		for(int x=0;x<bestSongs.size();x++)
+			if(bestSongs.get(x).getId() == id) song = bestSongs.get(x).getTitle();
+		model.addAttribute("title", song);
 		return "songs";
 	}
 	
