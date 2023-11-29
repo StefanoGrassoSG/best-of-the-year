@@ -3,10 +3,41 @@
 	<head>
 	<meta charset="ISO-8859-1">
 	<title>ciao</title>
+	 <link rel="stylesheet" href="/webjars/bootstrap/5.3.2/css/bootstrap.min.css">
+	 <link th:href="@{/css/style.css}" rel="stylesheet">
 	</head>
 	<body>
-		<h1>
-			Best of the year by [[${myName}]]
-		</h1>
+		<header class="d-flex">
+			<div class="p-5 border-end border-bottom">
+				<h2>
+					Best of
+				</h2>
+			</div>
+			<div class="p-5 flex-grow-1 border-bottom">
+				<a href="http://localhost:8080/movies" class="btn btn-primary fs-5 px-4">
+					Movies
+				</a>
+				<a href="http://localhost:8080/songs" class="btn btn-primary fs-5 px-4">
+					Songs
+				</a>
+			</div>
+		</header>
+		
+		<main>
+			<h1 class="text-center mt-5">
+				Best of by [[${myName}]]
+			</h1>
+			
+			<div class="w-75 m-auto my-cont border">
+				<div class="h-50">
+					<img class="w-100 h-100" th:src="@{/images/ciao2.png}" alt="Immagine">
+				</div>
+				<div class="h-50 d-flex justify-content-center align-items-center">
+					<h2>
+						Collection of movies and songs for a special audience.
+					</h2>
+				</div>
+			</div>
+		</main>
 	</body>
 </html>
