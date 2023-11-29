@@ -17,20 +17,23 @@
 				</h2>
 			</div>
 			<div class="p-5 flex-grow-1 border-bottom">
-				<a th:replace="fragments :: button('movies', 'Movies')"></a>
-				<a th:replace="fragments :: button('songs', 'Songs')"></a>
+				<a th:replace="fragments :: button(@{/movies}, 'Movies')"></a>
+				<a th:replace="fragments :: button(@{/songs}, Songs)"></a>
 			</div>
 		</header>
 		
 		<main>
 			<h1 class="text-center mt-5">
-				Best Movies
+				Best Songs
 			</h1>
 			
 			<div class="w-25 m-auto border-top border-start border-end">
 				<ul class="p-0 m-0">
-				   <li class="list-unstyled text-center fs-2 border-bottom py-3" th:each="movie : ${bestMovies}">
-        				<a class="text-decoration-none text-dark" th:href="@{'/movies/' + ${movie.id}}" th:text="${movie.title}"></a>
+				   <li class="list-unstyled text-center fs-2 border-bottom py-3">
+        				<h3>
+							[[${song}]]
+							[[${movie}]]
+						</h3>
     			   </li>
 				</ul>
 			</div>

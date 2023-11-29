@@ -29,7 +29,9 @@
 			
 			<div class="w-25 m-auto border-top border-start border-end">
 				<ul class="p-0 m-0">
-					<li class="list-unstyled text-center fs-2 border-bottom py-3" th:each="song : ${bestSongs}" th:text="${song.title}"></li>					
+				   <li class="list-unstyled text-center fs-2 border-bottom py-3" th:each="song : ${bestSongs}">
+        				<a class="text-decoration-none text-dark" th:href="@{'/songs/' + ${song.id}}" th:text="${song.title}"></a>
+    			   </li>
 				</ul>
 			</div>
 		</main>

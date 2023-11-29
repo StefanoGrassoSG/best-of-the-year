@@ -36,8 +36,8 @@ public class MainController {
 		String movie = null;
 		for(int x=0;x<bestMovies.size();x++)
 			if(bestMovies.get(x).getId() == id) movie = bestMovies.get(x).getTitle();
-		model.addAttribute("title", movie);
-		return "movies";
+		model.addAttribute("movie", movie);
+		return "single";
 	}
 	@GetMapping("songs/{id}") 
 	public String song(Model model, @PathVariable int id) {
@@ -45,8 +45,8 @@ public class MainController {
 		String song = null;
 		for(int x=0;x<bestSongs.size();x++)
 			if(bestSongs.get(x).getId() == id) song = bestSongs.get(x).getTitle();
-		model.addAttribute("title", song);
-		return "songs";
+		model.addAttribute("song", song);
+		return "single";
 	}
 	
 	private List<Movie> getBestMovies() {
