@@ -1,16 +1,37 @@
 <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
 <html>
 	<head>
 	<meta charset="ISO-8859-1">
-	<title>Insert title here</title>
+	<title>ciao</title>
 	 <link rel="stylesheet" href="/webjars/bootstrap/5.3.2/css/bootstrap.min.css">
+	 <link th:href="@{/css/style.css}" rel="stylesheet">
 	</head>
-	<body>
-		<div>
-			[[${bestMovies}]]
-		</div>
-		<div>
-			[[${title}]]
-		</div>
+	<body>	
+		<header class="d-flex">
+			<div class="p-5 border-end border-bottom">
+				<h2>
+					<a class="text-decoration-none" href="http://localhost:8080">
+						Best of
+					</a>
+				</h2>
+			</div>
+			<div class="p-5 flex-grow-1 border-bottom">
+				<a th:replace="fragments :: button('movies', 'Movies')"></a>
+				<a th:replace="fragments :: button('songs', 'Songs')"></a>
+			</div>
+		</header>
+		
+		<main>
+			<h1 class="text-center mt-5">
+				Best Movies
+			</h1>
+			
+			<div class="w-25 m-auto border-top border-start border-end">
+				<ul class="p-0 m-0">
+					<li class="list-unstyled text-center fs-2 border-bottom py-3" th:each="movie : ${bestMovies}" th:text="${movie.title}"></li>					
+				</ul>
+			</div>
+		</main>
 	</body>
 </html>

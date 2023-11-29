@@ -1,0 +1,10 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+	<a th:fragment="button(link, title)"
+		th:href="${link}"
+		th:text="${title}"
+		class="btn btn-primary fs-5 px-4">
+	</a>
+</body>
+</html>

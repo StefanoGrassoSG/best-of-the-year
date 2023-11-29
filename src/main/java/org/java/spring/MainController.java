@@ -20,19 +20,13 @@ public class MainController {
 	@GetMapping("/movies")
 	public String movies(Model model) {
 		List<Movie> bestMovies = getBestMovies(); 
-	    List<String> titles = new ArrayList<>();
-	    for (int x=0;x<bestMovies.size();x++) titles.add(bestMovies.get(x).getTitle());
-	    String bestMoviesString = String.join(", ", titles);
-	    model.addAttribute("bestMovies", bestMoviesString);
+	    model.addAttribute("bestMovies", bestMovies);
 	    return "movies";
 	}
 	@GetMapping("/songs")
 	public String songs(Model model) {
 	    List<Song> bestSongs = getBestSongs(); 
-	    List<String> titles = new ArrayList<>();
-	    for (int x=0;x<bestSongs.size();x++) titles.add(bestSongs.get(x).getTitle());
-	    String bestSongsString = String.join(", ", titles);
-	    model.addAttribute("bestSongs", bestSongsString);
+	    model.addAttribute("bestSongs", bestSongs);
 	    return "songs";
 	}
 	

@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
 <html>
 	<head>
 	<meta charset="ISO-8859-1">
@@ -6,20 +7,18 @@
 	 <link rel="stylesheet" href="/webjars/bootstrap/5.3.2/css/bootstrap.min.css">
 	 <link th:href="@{/css/style.css}" rel="stylesheet">
 	</head>
-	<body>
+	<body>	
 		<header class="d-flex">
 			<div class="p-5 border-end border-bottom">
 				<h2>
-					Best of
+					<a class="text-decoration-none" href="http://localhost:8080">
+						Best of
+					</a>
 				</h2>
 			</div>
 			<div class="p-5 flex-grow-1 border-bottom">
-				<a href="http://localhost:8080/movies" class="btn btn-primary fs-5 px-4">
-					Movies
-				</a>
-				<a href="http://localhost:8080/songs" class="btn btn-primary fs-5 px-4">
-					Songs
-				</a>
+				<a th:replace="fragments :: button('movies', 'Movies')"></a>
+				<a th:replace="fragments :: button('songs', 'Songs')"></a>
 			</div>
 		</header>
 		
